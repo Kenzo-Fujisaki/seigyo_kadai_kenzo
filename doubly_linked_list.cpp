@@ -32,8 +32,9 @@ list *add_list(list *list_head,int data){
     list* receiver = nullptr;
     list* creater = nullptr;
     check = check_list(list_head); //リストが存在するかチェック
+    //リストが無ければ作る
     if(check == judge){
-        creater = new list;
+        creater = new list; //動的な領域を確保
         creater -> data = data;
         creater -> prev = nullptr;
         creater -> next = nullptr;
@@ -42,7 +43,7 @@ list *add_list(list *list_head,int data){
     //最後尾まで辿った後に追加する
     else{
         receiver = search_list(list_head);//最後尾までアドレスを辿り最後尾の要素のアドレスを受け取る
-        creater = new list;//動的な領域を確保
+        creater = new list; //動的な領域を確保
         creater -> data = data;
         creater -> prev = receiver;
         creater -> next = nullptr;
