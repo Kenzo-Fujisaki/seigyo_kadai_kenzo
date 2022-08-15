@@ -7,10 +7,12 @@ typedef struct list{
     struct list *next;
 }list;
 
+bool judge = false;
 //リストが存在するか確かめる関数
 int check_list(list *checker) { 
     if (checker == nullptr) {
-        return 1;
+        judge = true;
+        return judge;
     } else {
         return 0;
     }
@@ -30,7 +32,7 @@ list *add_list(list *list_head,int data){
     list* receiver = nullptr;
     list* creater = nullptr;
     check = check_list(list_head); //リストが存在するかチェック
-    if(check == 1){
+    if(check == judge){
         creater = new list;
         creater -> data = data;
         creater -> prev = nullptr;
