@@ -16,12 +16,12 @@ list *search_list(list *searcher){
 }
 
 //一つ目
-list *init_list(list *list_head,int data){
+list *init_list(list *first_list_head,int first_data){
     list* first_receiver = nullptr;
     list* first_creater = nullptr;
 
     first_creater = new list; //動的な領域を確保
-    first_creater -> data = data;
+    first_creater -> data = first_data;
     first_creater -> prev = nullptr;
     first_creater -> next = nullptr;
     return first_creater;
